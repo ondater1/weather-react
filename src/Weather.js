@@ -40,9 +40,8 @@ export default function Weather() {
     if (loaded) {
       return (
         <div>
-          {form}
           <ul>
-            <li>City: <strong>{weather.city}</strong></li>
+            
             <li>Temperature: {weather.temperature}°C</li>
             <li>Humidity: {weather.humidity}%</li>
             <li>Wind: {weather.wind}km/h</li>
@@ -50,10 +49,24 @@ export default function Weather() {
             <li>
               <img src={weather.icon} alt={weather.description} />
             </li>
+            <li>City: <strong>{weather.city}</strong></li>
           </ul>
+          {form}
         </div>
       );
     } else {
-      return form;
+      return (
+          <div>
+      <ul>
+        <li>Temperature: </li>
+        <li>Humidity: </li>
+        <li>Wind: </li>
+        <li>Description: </li>
+        
+        <li>City: </li>
+      </ul>
+      {form}
+      </div>
+      )
     }
   }
